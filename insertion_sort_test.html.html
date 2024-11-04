@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tester Insertion Sort</title>
+    <script>
+        function insertionSort(arr) {
+            for (let i = 1; i < arr.length; i++) {
+                let current = arr[i];
+                let j = i - 1;
+
+                // Déplacer les éléments du tableau qui sont plus grands que current
+                while (j >= 0 && arr[j] > current) {
+                    arr[j + 1] = arr[j]; // Déplacer l'élément vers la droite
+                    j--; // Décrémenter j pour continuer à vérifier les éléments précédents
+                }
+                arr[j + 1] = current; // Insérer current à la bonne position
+            }
+            return arr; // Retourner le tableau trié
+        }
+
+        // Exemple d'utilisation
+        window.onload = function() {
+            const tableau = [5, 3, 8, 4, 2];
+            document.write("Tableau original :", tableau);
+            const tableauTrie = insertionSort(tableau);
+            document.write("Tableau trié :", tableauTrie);
+        };
+    </script>
+</head>
+<body>
+    <h1>Tester l'Algorithme de Tri par Insertion</h1>
+    <p>Ouvrez la console du navigateur pour voir les résultats.</p>
+</body>
+</html>
